@@ -4,6 +4,5 @@
     "dockerfile": "Dockerfile"
   },
   "forwardPorts": [6080],
-  "workspaceFolder": "/workspace",
   "remoteUser": "root"
 }
