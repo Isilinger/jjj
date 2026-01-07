@@ -1,7 +1,8 @@
 {
   "name": "Codespace Browser (noVNC + Firefox)",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "context": "."
   },
   "forwardPorts": [6080],
   "remoteUser": "root"
