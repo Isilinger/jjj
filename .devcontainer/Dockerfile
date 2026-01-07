@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install required packages
+# Install packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     firefox \
     xvfb \
@@ -19,8 +19,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Clone noVNC (static web client)
 RUN git clone https://github.com/novnc/noVNC.git /opt/noVNC
 
-# Copy startup script (the repo will contain .devcontainer/start.sh)
-COPY .devcontainer/start.sh /usr/local/bin/start.sh
+# start.sh is in the same directory as this Dockerfile (.devcontainer)
+COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
 EXPOSE 6080 5900
